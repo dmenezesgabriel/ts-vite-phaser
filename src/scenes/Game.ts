@@ -1,8 +1,13 @@
 import Phaser from "phaser";
 
+const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
+  active: false,
+  visible: false,
+  key: "Game",
+};
 export default class Demo extends Phaser.Scene {
   constructor() {
-    super("GameSCene");
+    super(sceneConfig);
   }
 
   preload() {
