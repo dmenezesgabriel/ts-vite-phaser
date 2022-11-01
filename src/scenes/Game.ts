@@ -1,20 +1,16 @@
 import Phaser from "phaser";
 
-const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
-  active: false,
-  visible: false,
-  key: "Game",
-};
-export default class Demo extends Phaser.Scene {
+export default class Game extends Phaser.Scene {
   constructor() {
-    super(sceneConfig);
+    super("game");
   }
 
   preload() {
-    this.load.image("logo", "assets/phaser3-logo.png");
+    // Can create cursors for game here
   }
 
   create() {
+    // All game setup
     const logo = this.add.image(400, 70, "logo");
 
     this.tweens.add({
@@ -25,5 +21,9 @@ export default class Demo extends Phaser.Scene {
       yoyo: true,
       repeat: -1,
     });
+  }
+
+  update() {
+    // Update cursors and stuff
   }
 }
